@@ -1,0 +1,413 @@
+body {
+    font-family: "Merienda", serif;
+    text-align: center; /* Centra el texto de todo el cuerpo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Asegura una disposición vertical */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    min-height: 100vh; /* Altura mínima de 100% del viewport */
+    background-image: url(/imagenes/fg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+.contenedor-central {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+.contenedor-central p{
+    font-style: oblique;
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-shadow: 2px 2px 4px #888888; /*Efecto de sombra*/
+}
+.icono-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(186, 148, 79); /* Sustituye con tu color */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto sombra para 3D */
+    cursor: pointer;
+}
+header {
+    text-align: center;
+    padding: 20px;
+}
+header img {
+    width: 100%;
+    height: auto;
+}
+ /*Card Inicial*/
+  .foto-inicial {
+    width: 95%; /* O el tamaño inicial que prefieras */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición de la transformación y la sombra */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    border-radius: 15px;
+  }
+  .foto-inicial:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4); /* Sombra al pasar el mouse */
+  }
+  .ampliada {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+    z-index: 10; /* Asegura que la imagen ampliada esté por encima de otros elementos */
+    position: relative; /* Importante si otros elementos están posicionados absolutamente */
+  }
+.card-inicial h1{
+    font-style: oblique;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 500;
+    color:black;
+    text-shadow: 2px 2px 4px #BCAD8C; /* Efecto de sombra */
+}
+.card-inicial h2{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px #BCAD8C; /* Efecto de sombra */
+}
+.pregunta-contador{
+    font-size: 30px;
+    color:black;
+    text-shadow: 2px 2px 4px #BCAD8C; /* Efecto de sombra */
+    margin-top: 0px;
+}
+/*Contador*/
+.contador-principal {
+    display: flex;
+    justify-content: center; /* Centra el contenido verticalmente */
+    background-color: transparent; /* Fondo de la caja del contador */
+    padding: 10px;
+    border-radius: none;
+    box-shadow: none;
+}
+.contador {
+    display: flex;
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin-bottom: 30px;
+}
+.unidad {
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+}
+.numero {
+    display: block;
+    font-size: 40px; /* Tamaño de los números */
+    color: #333;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.etiqueta {
+    color: #333;
+    font-size: 20px;
+    text-transform: none; /* Texto en mayúsculas */
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-gap: 10px; /* Espaciado entre cards */
+}
+.fade-in-scroll {
+    width: 300px;
+    height: 350px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 10px;
+}
+.fade-in-scroll:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+.modal-imagen {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.568); /* Fondo negro con algo de transparencia */
+    background-color: rgba(0, 0, 0, 0.452);
+}
+.modal-imagen .cerrar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-imagen .contenido-modal {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Estilos para el visor de la galería */
+/*.visor-galeria {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }*/
+  
+  .navegacion-imagen {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -50px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    /* Hacerlas invisibles inicialmente */
+    display: none;
+}
+
+.navegacion-imagen.izquierda {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.navegacion-imagen.derecha {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Hacerlas visibles cuando el modal está abierto */
+.modal-imagen.abierto .navegacion-imagen {
+    display: block;
+}
+
+
+/*Div Cards*/
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columnas */
+    grid-gap: 10px; /* Espaciado entre cards */
+}
+.card {
+    position: static;
+    background: rgba(245, 245, 245, 0.792); /* Fondo semi-transparente */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil para el efecto glass */
+    padding: 1px; /* Espacio interior */
+    margin: 20px; /* Espacio exterior */
+    /* Para el efecto 3D */
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    width: 450px;
+    height: 250px;
+}
+.card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse por encima */
+  }
+.card h2{
+    font-size: 20px;
+    margin-top: -10px;
+    color: black;
+    text-shadow: 2px 2px 4px white; /* Efecto de sombra */
+}
+.card p{
+    font-size: 15px;
+    margin-top: -10px;
+}
+.card img {
+    width: 15%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 2px solid rgb(186, 148, 79);
+    border-radius: 50%;
+}
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: rgb(186, 148, 79);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.boton:hover {
+    background-color: rgb(202, 177, 130);
+}
+.contenedor-final .frase{
+    margin: 30px 45px 30px 45px;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: oblique;
+}
+.contenedor-final .frase-1{
+    font-weight: 500;
+    font-style: oblique;
+}
+.contenedor-final .frase-2{
+    font-style: oblique;
+    font-size: 45px;
+    font-weight: 500;
+    color:black;
+    text-shadow: 2px 2px 4px #BCAD8C; /* Efecto de sombra */
+}
+/*Responsive Ipad*/@media (max-width: 1200px){
+    body {
+        /* Ajustes opcionales para la imagen de fondo en Ipad */
+        background-size: cover; /* Sigue cubriendo todo el espacio, pero puedes ajustar si es necesario */
+    }
+    .foto-inicial {
+        width: 100%; /* O el tamaño inicial que prefieras */
+    }
+    .galeria {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .card-imagen {
+        width: 80%; /* O el ancho que prefieras */
+        margin: 10px 0;
+        opacity: 0;
+        animation: fadein 2s ease forwards;
+    }
+    
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .fade-in-scroll {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .fade-in-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .contenedor-cards {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr); /* 3 columnas */
+        grid-gap: 10px; /* Espaciado entre cards */
+    }
+    .card {
+        width: 70%; 
+        margin: auto; 
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .card-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+/*Responsive Cel*/ @media (max-width: 768px){
+    body {
+        /* Ajustes opcionales para la imagen de fondo en Celular */
+        background-size: cover; /* Sigue cubriendo todo el espacio, pero puedes ajustar si es necesario */
+    }
+    .galeria {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .card-imagen {
+        width: 80%; /* O el ancho que prefieras */
+        margin: 10px 0;
+        opacity: 0;
+        animation: fadein 2s ease forwards;
+    }
+    
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .fade-in-scroll {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .fade-in-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .contenedor-cards {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr); /* 3 columnas */
+        grid-gap: 10px; /* Espaciado entre cards */
+    }
+    .card {
+        width: 95%; 
+        margin: auto; 
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .card-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}

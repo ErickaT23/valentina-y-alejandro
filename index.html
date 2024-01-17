@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentina & Alejandro</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda">
+    <script src="https://kit.fontawesome.com/8435ad2454.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="contenedor-central">
+            <p class="frase-play">¡Dale play a nuestra canción!</p>
+            <div id="playPauseButton" class="icono-contenedor">
+                <i id="iconoPlayPause" class="fas fa-play"></i>
+            </div>
+                <audio id="audioPlayer" src="Música/06 Contigo aprendí (feat. Alejandro Sanz).mp3"></audio>
+        </div>
+        <!--Inicio-->
+        <div class="card-inicial">
+            <h1>Valentina & Alejandro</h1>
+            <h2>14 . 02 . 2024</h2>
+            <img src="/imagenes/F1.png" alt="Foto de la pareja" class="foto-inicial">
+        </div>
+    </header>
+
+    <h1 class="pregunta-contador">¿Cuánto falta?</h1>
+    <!-- Contador de tiempo real aquí -->
+    <div class="contador-principal">
+        <div id="contador" class="contador">
+            <div class="unidad">
+                <span id="dias" class="numero"></span>
+                <span class="etiqueta">Días</span>
+            </div>
+            <div class="unidad">
+                <span id="horas" class="numero"></span>
+                <span class="etiqueta">Horas</span>
+            </div>
+            <div class="unidad">
+                <span id="minutos" class="numero"></span>
+                <span class="etiqueta">Minutos</span>
+            </div>
+            <div class="unidad">
+                <span id="segundos" class="numero"></span>
+                <span class="etiqueta">Segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <h1>Galeria de Fotos</h1>
+    <div class="galeria">
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/H1.png" alt="Imagen 1">
+        </div>
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/v1.png" alt="Imagen 2">
+        </div>
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/H2.png" alt="Imagen 3">
+        </div>
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/v2.png" alt="Imagen 4">
+        </div>
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/H3.png" alt="Imagen 5">
+        </div>
+        <div class="card-imagen" onclick="ampliarImagen(this)">
+            <img class="fade-in-scroll" src="/imagenes/v3.png" alt="Imagen 6">
+        </div>
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+
+    <div id="modal-imagen" class="modal-imagen">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <a class="navegacion-imagen izquierda" onclick="cambiarImagen(-1)">&#10094;</a>
+        <a class="navegacion-imagen derecha" onclick="cambiarImagen(1)">&#10095;</a>
+        <img class="contenido-modal" id="imagen-ampliada">
+    </div>
+
+    <!-- Información de la ceremonia -->
+    <div class="contenedor-cards">
+        <section class="card">
+             <img src="iconos/1.svg"></img>
+             <h2>Ceremonia</h2>
+             <p>Hotel Museo Casa Santo Domingo | 12:00 Hrs</p>
+             <a href="https://maps.app.goo.gl/UMuNBeqvz8bfKG489" target="_blank" class="boton">Cómo llegar</a>
+        </section>
+     <!-- Información de la recepción -->
+       <section class="card">
+        <img src="/iconos/2.svg" alt="">
+        <h2>Recepción</h2>
+        <p>Hotel Museo Casa Santo Domingo | 13:00 Hrs</p>
+        <a href="https://maps.app.goo.gl/UMuNBeqvz8bfKG489" target="_blank" class="boton">Cómo llegar</a>
+       </section>
+     <!-- Información de lluvia de sobres -->
+       <section class="card">
+        <img src="/iconos/3.svg" alt="">
+        <h2>Lluvia de Sobres</h2>
+        <p>Lo que más queremos es compartir con vos nuestro gran día, pero si deseas regalarnos algo habrá un cofre en la entrada</p>
+       </section>
+      <!-- Información del dresscode -->
+      <section class="card">
+        <img src="/iconos/4.svg" alt="">
+        <h2>Dresscode</h2>
+        <p>Elegante y queda reservado el color Blanco & Anaranjado. Te dejamos unas sugerencias aquí en nuestro tablero de Pinterest</p>
+        <a href="https://www.pinterest.com/twodesignt/bodas/valentina-alejandro/" target="_blank" class="boton">Ver</a>
+      </section>
+       <!-- Música -->
+      <section class="card">
+        <img src="/iconos/7.svg" alt="">
+        <h2>Filtro para tu historia</h2>
+        <P>Toma tus historias para Instagram con nuestros Filtros Personalizados</P>
+        <a href="https://www.instagram.com/ar/251150787453809" target="_blank" class="boton">Toma una Historia</a>
+      </section>
+      <!-- Confirmación -->
+       <section class="card">
+        <img src="/iconos/8.svg" alt="">
+        <h2>RSVP</h2>
+        <P>Confirma tu asistencia antes del 01 de Febrero e indicanos si tienes alguna dieta alimenticia especial</P>
+        <a href="https://wa.me/message/IQSYL2JZU65UL1" target="_blank" class="boton">Confirmar asistencia</a>
+       </section>
+    </div>
+
+    <div class="contenedor-final">
+        <h1 class="frase">"Contigo aprendí que tu presencia no la cambio por ninguna... Aprendí que puedo irme mañana mismo de este mundo las cosas buenas, ya contigo las viví"</h1>
+        <img src="/imagenes/F2.png" alt="Foto de la pareja" class="foto-inicial">
+        <h1 class="frase-1">¡Te esperamos!</h1>
+        <h1 class="frase-2">Valentina & Alejandro</h1>
+    </div>
+    
+
+    <script src="js/contador.js"></script>
+    <script src="js/play.js"></script>
+    <script src="js/imagenes-sombras.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/galeria-responsive.js"></script>
+    <script src="js/card-visible.js"></script>
+    <script src="js/flechas-correr.js"></script>
+    <script src="js/ampliar-imagen.js"></script>
+    <script src="/js/cerrar-modal.js"></script>
+</body>
+</html>
